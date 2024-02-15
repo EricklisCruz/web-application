@@ -1,6 +1,7 @@
 package com.redway.backendformapplication.service;
 
 import com.redway.backendformapplication.domain.user.User;
+import com.redway.backendformapplication.dto.UserDTO;
 import com.redway.backendformapplication.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,9 @@ public class UserService {
 
     public User saveUser(User user) {
         return userRepository.save(user);
+    }
+
+    public User fromDTO(UserDTO userDTO) {
+        return new User(userDTO.getName(), userDTO.getEmail());
     }
 }
