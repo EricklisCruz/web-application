@@ -14,7 +14,7 @@ import java.time.Instant;
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<StandardError> dataBaseException(DataIntegrityViolationException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> dataBaseException() {
         String error = "Unique index or primary key violation";
         HttpStatus status = HttpStatus.CONFLICT;
         StandardError err = new StandardError(Instant.now(), status.value(), error);
