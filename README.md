@@ -2,9 +2,6 @@
 
 <p1 align="center">
 
-[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)]()
-[![en](https://img.shields.io/badge/lang-en-red.svg)]()
-
 </p>
 
 ## Tecnologias 🚀
