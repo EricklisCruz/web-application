@@ -32,9 +32,8 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDTO>> findAllUsers() {
+    public ResponseEntity<List<User>> findAllUsers() {
         List<User> users = userService.findAll();
-        List<UserDTO> usersDTO = users.stream().map(UserDTO::new).toList();
-        return ResponseEntity.ok().body(usersDTO);
+        return ResponseEntity.ok().body(users);
     }
 }
