@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const URL = "http://localhost:8080";
 
 interface User {
-  name: string,
-  email: string
+  name: string;
+  email: string;
 }
 
 const UserListPage = () => {
