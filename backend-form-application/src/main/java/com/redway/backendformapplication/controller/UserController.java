@@ -32,7 +32,9 @@ public class UserController {
             @ApiResponse(responseCode = "204", description = "Created user",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = User.class)) }),
-            @ApiResponse(responseCode = "400", description = "Invalid request content",
+            @ApiResponse(responseCode = "400", description = "Invalid email or name null",
+                    content = @Content),
+            @ApiResponse(responseCode = "409", description = "Unique index or primary key violation",
                     content = @Content)})
     @Transactional
     @PostMapping
