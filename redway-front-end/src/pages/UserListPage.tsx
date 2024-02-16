@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const URL = "http://localhost:8080";
 
 interface User {
+  id: number
   name: string;
   email: string;
 }
@@ -31,7 +32,6 @@ const UserListPage = () => {
           <h2 className="text-lg leading-6 font-medium text-gray-900 text-center">
             Lista de Usuários
           </h2>
-
           <Link
             to="/"
             className="bg-black rounded font-semibold text-white ml-auto p-2"
@@ -43,8 +43,8 @@ const UserListPage = () => {
         </div>
       </div>
 
-      <div className="mt-6">
-        <table className="w-full divide-y divide-gray-200">
+      <div className="mt-6 overflow-x-auto">
+        <table className="w-full sm:w-full md:w-full lg:w-full xl:w-full divide-y divide-gray-200">
           <thead>
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
@@ -55,13 +55,13 @@ const UserListPage = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-gray-200">
             {users.map((user) => (
-              <tr>
-                <td className="px-6 py-4 test-sm font-medium text-gray-900 whitespace-nowrap">
+              <tr key={user.id}>
+                <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                   {user.name}
                 </td>
-                <td className="px-6 py-4 test-sm font-medium text-gray-900 whitespace-nowrap">
+                <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                   {user.email}
                 </td>
               </tr>
