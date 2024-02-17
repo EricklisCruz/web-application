@@ -2,14 +2,9 @@ import { useEffect, useState } from "react";
 import "../styles/global.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { User } from "../interfaces/User";
 
 const URL = "http://localhost:8080";
-
-interface User {
-  id: number
-  name: string;
-  email: string;
-}
 
 const UserListPage = () => {
   const [users, setUsers] = useState<User[]>([]);

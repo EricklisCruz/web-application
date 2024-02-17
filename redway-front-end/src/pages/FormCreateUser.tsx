@@ -42,11 +42,15 @@ const App = () => {
   async function createUser(data: CreateUserFormData) {
     try {
       const response = await axios.post(URL + "/user", data);
-      if(response.status === 201) {
+      if (response.status === 201) {
         alert("Usuário cadastrado com sucesso");
       }
     } catch (error) {
-      alert("Email já cadastrado");
+      if (error.message === "Network Error") {
+        alert("Servidor iniciando, espere um momento e tente novamente");
+      } else if(error.response.data.status == 409) {
+        alert("Email já cadastrado");
+      }
     }
   }
 
