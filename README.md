@@ -44,7 +44,7 @@ Projeto criado para cadastrar usuário por meio de um formulário e coletar seu 
     docker compose up -d
     ```
 - URL do seu front-end:
-   - [http://localhost:3000]()
+   - [http://localhost:3000](http://localhost:3000)
 - Swagger documentation:
-   - [http://localhost:8080/swagger-ui/index.html]() 
+   - [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
